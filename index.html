@@ -257,17 +257,16 @@
       document.getElementById("participantNumber").textContent =
         String(nextNumber).padStart(3, "0");
 
-    } catch (err) {
+   } catch (err) {
 
-      console.error(err);
+  console.error(err);
 
-      error.textContent =
-        "Произошла ошибка. Попробуйте ещё раз.";
+  error.textContent =
+    "Ошибка: " + err.message;
 
-      button.disabled = false;
-      button.textContent = "УЧАСТВОВАТЬ";
-    }
-
+  button.disabled = false;
+  button.textContent = "УЧАСТВОВАТЬ";
+}
   });
 
 </script>
