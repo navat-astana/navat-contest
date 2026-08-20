@@ -215,7 +215,8 @@
       );
 
       if (!checkResponse.ok) {
-        throw new Error("Ошибка подключения к базе");
+        const details = await checkResponse.text();
+throw new Error("Supabase: " + checkResponse.status + " — " + details);
       }
 
       const previous = await checkResponse.json();
